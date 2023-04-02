@@ -12,6 +12,3 @@ vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Custom command that will teleport to the nvim config
-vim.cmd("command! OpenConfig cd " .. vim.env.HOME .. "/AppData/Local/nvim | Ex")
-
