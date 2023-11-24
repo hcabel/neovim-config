@@ -6,6 +6,8 @@ vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
 
+vim.keymap.set("n", "J", "mzJ`z");
+
 -- Paste with ctrl+v
 vim.keymap.set("i", "<C-v>", '<Esc>"+pa')
 

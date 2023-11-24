@@ -28,7 +28,9 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
 	use("lewis6991/gitsigns.nvim")
 
-	use {
+
+
+	use({
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		requires = {
@@ -51,11 +53,14 @@ return require('packer').startup(function(use)
 			-- Snippets
 			{'L3MON4D3/LuaSnip'}, -- Required
 		}
-	}
+	})
 
 	use("theprimeagen/harpoon")
 
-	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use({
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'make'
+	})
 
 	use('zbirenbaum/copilot.lua')
 	use {
@@ -66,7 +71,8 @@ return require('packer').startup(function(use)
 		end
 	}
 
-	use({"nvim-neo-tree/neo-tree.nvim",
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
 		branch = "v3.x",
 		requires = {
 			"nvim-lua/plenary.nvim",
@@ -74,5 +80,10 @@ return require('packer').startup(function(use)
 			"MunifTanjim/nui.nvim",
 		},
 	})
+
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
 
 end)
