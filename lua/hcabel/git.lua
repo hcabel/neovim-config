@@ -4,7 +4,15 @@ local gitsigns = require('gitsigns')
 
 vim.keymap.set('n', "<leader>gf", function () telescope.git_files({}) end)
 
-vim.keymap.set("n", "<leader>gs", ":vertical Git<CR>")
+vim.keymap.set("n", "<leader>gs", function()
+	vim.api.nvim_cmd({
+		cmd = "Git",
+		mods = {
+			vertical = true,
+			split = "botright",
+		},
+	}, {})
+end)
 
 -- HUNK
 vim.keymap.set('n', "<leader>gh", gitsigns.preview_hunk)
