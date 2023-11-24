@@ -1,7 +1,6 @@
 
 local lualine = require('lualine')
 
-
 -- Slow ??
 local function lsp_progress()
 	local messages = vim.lsp.util.get_progress_messages()
@@ -39,7 +38,17 @@ lualine.setup({
 	},
 	sections = {
 		lualine_a = {'mode'},
-		lualine_b = {'branch', 'diff', 'diagnostics'},
+		lualine_b = {
+			'branch',
+			{
+				'diff',
+				symbols = {
+					added = ' ',
+					modified = ' ',
+					removed = ' '
+				}
+			}
+		},
 		lualine_c = {
 			{
 				'filetype',
@@ -57,10 +66,18 @@ lualine.setup({
 				}
 			}, {
 				'location',
-				padding = 0
+				padding = { left = 0, right = 1 },
+			}, {
+				'diagnostics',
+				symbols = {
+					error = ' ',
+					warn = ' ',
+					info = ' ',
+					hint = ' ',
+				},
 			}
 		},
-		lualine_x = {},
+		lualine_x = { lsp_progress },
 		lualine_y = {"tabs"},
 		lualine_z = {'location'}
 	},
