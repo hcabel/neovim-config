@@ -1,3 +1,4 @@
+
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
@@ -6,10 +7,10 @@ vim.keymap.set('n', '<leader>ps', function()
 end)
 
 -- Find into config files
-vim.keymap.set('n', '<leader>_cf', function()
+vim.keymap.set('n', '<leader>_f', function()
 	builtin.find_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
 end)
-vim.keymap.set('n', '<leader>_cg', function()
+vim.keymap.set('n', '<leader>_g', function()
 	builtin.git_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
 end)
 
@@ -24,7 +25,8 @@ telescope.setup{
 				["<C-z>"] = function()
 				end
 			}
-		}
+		},
+
 	},
 	extensions = {
 		fzf = {

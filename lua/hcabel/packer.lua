@@ -6,9 +6,10 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
+		'nvim-telescope/telescope.nvim',
+		requires = {
+			{'nvim-lua/plenary.nvim'}
+		}
 	}
 
 	use({
@@ -25,10 +26,13 @@ return require('packer').startup(function(use)
 	use('mbbill/undotree')
 
 	-- Git workflow
-	use('tpope/vim-fugitive')
+	use({'NeogitOrg/neogit',
+		requires = {
+			{'nvim-lua/plenary.nvim'},
+			{'sindrets/diffview.nvim'}
+		}
+	})
 	use("lewis6991/gitsigns.nvim")
-
-
 
 	use({
 		'VonHeikemen/lsp-zero.nvim',
@@ -45,7 +49,7 @@ return require('packer').startup(function(use)
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
+			-- {'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'hrsh7th/cmp-nvim-lsp'}, -- Required
 			{'hrsh7th/cmp-nvim-lua'},
@@ -62,14 +66,7 @@ return require('packer').startup(function(use)
 		run = 'make'
 	})
 
-	use('zbirenbaum/copilot.lua')
-	use {
-		"zbirenbaum/copilot-cmp",
-		after = { "copilot.lua" },
-		config = function ()
-			require("copilot_cmp").setup()
-		end
-	}
+	use('github/copilot.vim')
 
 	use({
 		"nvim-neo-tree/neo-tree.nvim",
@@ -81,9 +78,16 @@ return require('packer').startup(function(use)
 		},
 	})
 
-	use {
+	use({
 		'nvim-lualine/lualine.nvim',
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-	}
+	})
+
+	use({
+		'akinsho/bufferline.nvim',
+		tag = "*", requires = 'nvim-tree/nvim-web-devicons'
+	})
+
+	use {"hcabel/ov-log-highlighting"}
 
 end)

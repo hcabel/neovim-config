@@ -17,10 +17,20 @@ local function lsp_progress()
 	return table.concat(status, " | ") .. " " .. spinners[frame + 1]
 end
 
+local custom_auto = require('lualine.themes.auto')
+print(custom_auto.inactive.a.bg)
+local bg_color = '#26233a'
+custom_auto.normal.c.bg = bg_color
+custom_auto.insert.c.bg = bg_color
+custom_auto.visual.c.bg = bg_color
+custom_auto.replace.c.bg = bg_color
+custom_auto.command.c.bg = bg_color
+custom_auto.inactive.c.bg = "#1c1a2a"
+
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = 'auto',
+		theme = custom_auto,
 		section_separators = { left = '', right = '' },
 		component_separators = { left = '❱', right = '❰' },
 		disabled_filetypes = {
@@ -66,14 +76,14 @@ lualine.setup({
 				}
 			}, {
 				'location',
-				padding = { left = 0, right = 1 },
+				padding = { left = 0, right = 0 },
 			}, {
 				'diagnostics',
 				symbols = {
-					error = ' ',
-					warn = ' ',
-					info = ' ',
-					hint = ' ',
+					error = ' ',
+					warn = ' ',
+					hint = ' ',
+					info = ' '
 				},
 			}
 		},
@@ -94,3 +104,4 @@ lualine.setup({
 	inactive_winbar = {},
 	extensions = {}
 })
+
