@@ -73,10 +73,10 @@ lualine.setup({
 					readOnly = '',
 					unamed = '',
 					newfile = '',
-				}
+				},
 			}, {
 				'location',
-				padding = { left = 0, right = 0 },
+				padding = { left = 0, right = 1 }
 			}, {
 				'diagnostics',
 				symbols = {
