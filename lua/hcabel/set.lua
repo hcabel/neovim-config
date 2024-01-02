@@ -30,13 +30,8 @@ vim.opt.colorcolumn = "120"
 
 vim.opt.list = true
 
-vim.opt.listchars:append({ tab = '🢒 ', multispace = '∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙∙wtf tu fait quoi la?!', extends = '>', precedes = '<' });
+vim.opt.listchars:append({ tab = '🢒 ', multispace = '·', extends = '>', precedes = '<' });
 
 if vim.g.neovide then
-	-- Helper function for transparency formatting
-	local alpha = function()
-		return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
-	end
-
 	vim.g.neovide_transparency = 0.6
 end
