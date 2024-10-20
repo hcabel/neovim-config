@@ -29,7 +29,7 @@ vim.opt.numberwidth = 3
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "100"
+vim.opt.colorcolumn = "120"
 
 vim.opt.list = true
 

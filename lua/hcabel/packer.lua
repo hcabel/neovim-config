@@ -38,6 +38,8 @@ return require('packer').startup(function(use)
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v2.x',
 		requires = {
+			"simrat39/rust-tools.nvim",
+
 			-- LSP Support
 			{'neovim/nvim-lspconfig'},             -- Required
 			{"williamboman/mason.nvim",
@@ -49,6 +51,7 @@ return require('packer').startup(function(use)
 
 			-- Autocompletion
 			{'hrsh7th/nvim-cmp'},
+			{'hrsh7th/cmp-nvim-lsp'},
 			-- {'hrsh7th/cmp-buffer'},
 			{'hrsh7th/cmp-path'},
 			{'hrsh7th/cmp-nvim-lsp'}, -- Required
