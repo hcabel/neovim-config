@@ -62,6 +62,16 @@ return require('packer').startup(function(use)
 		}
 	})
 
+	use({
+		"saecki/crates.nvim",
+		config = function()
+			require("crates").setup()
+		end
+	})
+
+
+
+
 	use("theprimeagen/harpoon")
 
 	use({

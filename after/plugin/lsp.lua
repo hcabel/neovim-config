@@ -45,8 +45,12 @@ require('mason-lspconfig').setup({
 		lsp.default_setup,
 		rust_analyzer = function()
 			require('lspconfig').rust_analyzer.setup({
+				filetypes = { "rust" },
 				settings = {
 					["rust-analyzer"] = {
+						cargo = {
+							allFeatures = true,
+						},
 						diagnostics = {
 							enable = true,
 						}
