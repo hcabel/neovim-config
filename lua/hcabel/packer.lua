@@ -68,12 +68,19 @@ return require('packer').startup(function(use)
 
 	use('github/copilot.vim')
 
+	use({
+		'gelguy/wilder.nvim',
+		requires = { "nvim-tree/nvim-web-devicons" },
+	})
+
+	use("numToStr/Comment.nvim")
+
 --	use({
 --		"nvim-neo-tree/neo-tree.nvim",
 --		branch = "v3.x",
 --		requires = {
 --			"nvim-lua/plenary.nvim",
---			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+--			"nvim-tree/nvim-web-devicons",
 --			"MunifTanjim/nui.nvim",
 --		},
 --	})
@@ -90,4 +97,9 @@ return require('packer').startup(function(use)
 
 	use {"hcabel/ov-log-highlighting"}
 
+	use("Bekaboo/deadcolumn.nvim") -- Nicer color column
+
+	use({ 'mawkler/modicator.nvim', -- Current line number highlight
+		after = "rose-pine",
+	})
 end)

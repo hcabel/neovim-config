@@ -1,3 +1,5 @@
+vim = vim
+
 vim.g.mapleader = " "
 
 vim.opt.nu = true
@@ -20,18 +22,30 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 20
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
+vim.opt.numberwidth = 3
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "120"
+vim.opt.colorcolumn = "100"
 
 vim.opt.list = true
 
-vim.opt.listchars:append({ tab = '🢒 ', multispace = '·', extends = '>', precedes = '<' });
+vim.opt.listchars:append({
+	tab = '🢒 ',
+	multispace = '·',
+	extends = '>',
+	precedes = '<',
+});
+
+vim.opt.guifont = "CaskaydiaMono NF:h11"
+
+vim.opt.cursorline = true
+vim.opt.number = true
+vim.opt.termguicolors = true
 
 if vim.g.neovide then
-	vim.g.neovide_transparency = 0.6
+	vim.g.neovide_transparency = 0.9
 end
