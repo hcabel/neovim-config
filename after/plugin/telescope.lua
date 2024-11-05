@@ -6,13 +6,15 @@ vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
--- Find into config files
-vim.keymap.set('n', '<leader>_f', function()
-	builtin.find_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
-end)
-vim.keymap.set('n', '<leader>_g', function()
-	builtin.git_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
-end)
+-- Find into config files (linux and other will use tmux sessionizer for that)
+if vim.loop.os_uname().sysname == "Windows" then
+	vim.keymap.set('n', '<leader>_f', function()
+		builtin.find_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
+	end)
+	vim.keymap.set('n', '<leader>_g', function()
+		builtin.git_files({ cwd = vim.env.HOME .. "/AppData/Local/nvim" })
+	end)
+end
 
 local telescope = require('telescope');
 
