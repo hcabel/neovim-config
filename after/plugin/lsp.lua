@@ -40,7 +40,12 @@ lsp.format_on_save({
 	}
 })
 
+local servers = {
+	"rust_analyzer@2024-10-14",
+}
+
 require('mason-lspconfig').setup({
+	ensure_installed = servers,
 	handlers = {
 		lsp.default_setup,
 		rust_analyzer = function()
