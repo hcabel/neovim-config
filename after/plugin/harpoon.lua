@@ -6,15 +6,15 @@ local harpoon = require("harpoon")
 local width_val = 0;
 local win = vim.api.nvim_list_wins();
 for _i, window in ipairs(win) do
-	local width = vim.api.nvim_win_get_width(window);
-	width_val = width_val + width;
+  local width = vim.api.nvim_win_get_width(window);
+  width_val = width_val + width;
 end
 
 harpoon.setup({
-	menu = {
-		-- win size * 0.4
-		width = math.floor(width_val * 0.4),
-	},
+  menu = {
+    -- win size * 0.4
+    width = math.floor(width_val * 0.4),
+  },
 });
 
 local mark = require("harpoon.mark")
@@ -32,4 +32,3 @@ vim.keymap.set('n', "<leader>6", function () ui.nav_file(6) end)
 vim.keymap.set('n', "<leader>7", function () ui.nav_file(7) end)
 vim.keymap.set('n', "<leader>8", function () ui.nav_file(8) end)
 vim.keymap.set('n', "<leader>9", function () ui.nav_file(9) end)
-
