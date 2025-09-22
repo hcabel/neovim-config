@@ -3,3 +3,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true -- Use spaces for indentation
 vim.opt.smartindent = true
 
+vim.opt.listchars:append({
+  multispace = ' ',
+});
+
