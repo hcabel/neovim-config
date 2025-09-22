@@ -1,21 +1,13 @@
-vim = vim
-
 vim.g.mapleader = " "
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 2
--- vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
+-- Default indentation settings, this is overridden in the ftplugin files
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true -- Use spaces for indentation
 vim.opt.smartindent = false
-
--- vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 4
--- vim.opt.expandtab = false
--- vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -45,7 +37,7 @@ vim.opt.list = true
 
 vim.opt.listchars:append({
   tab = ' ',
-  multispace = ' ',
+  multispace = '   ',
   extends = '>',
   precedes = '<',
 });
