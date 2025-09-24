@@ -29,3 +29,11 @@ end)
 vim.keymap.set("n", "<leader>o", function()
     vim.api.nvim_call_function("append", { vim.fn.line("."), "" })
 end)
+
+vim.keymap.set("n", "<leader><leader>s", "<cmd>source %<CR>")
+
+-- Allow capital W to write (I do this out of habit)
+vim.cmd("command! W w")
+vim.cmd("command! Wq wq")
+vim.cmd("command! Wa wa")
+vim.cmd("command! Wqa wqa")
