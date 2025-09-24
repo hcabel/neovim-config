@@ -16,7 +16,8 @@ return {
         "catgoose/nvim-colorizer.lua", -- Color color text in the IDE
         event = "BufReadPre",
         opts = {},
-    }
+    },
+
     -- LSP
     -- {
     --     "nvim-treesitter/nvim-treesitter", -- Better syntax highlighting
@@ -91,6 +92,13 @@ return {
     -- --     end
     -- -- },
 
-    -- "NickvanDyke/opencode.nvim", TODO: Try this one later
-    -- -- "mrcjkb/rustaceanvim", TODO: Try this later
+    -- TO TRY LATER
+    -- > "NickvanDyke/opencode.nvim"
+    -- > "mrcjkb/rustaceanvim"
+
+    -- IDEA
+    -- > When searching i'd like the non matching lines to be faded out
+    -- > Keypress history
+    -- > Remove Text from cmp suggestion
+    -- > snipets higher ranking in cmp
 }
