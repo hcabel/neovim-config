@@ -18,8 +18,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("set")
+
+require("lazy").setup("plugins")
+
 require("remap")
 require("automation")
 require("lsp")
-
-require("lazy").setup("plugins")
+require("snippets")

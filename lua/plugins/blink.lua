@@ -1,10 +1,13 @@
 return {
     'saghen/blink.cmp',
     dependencies = {
-        'rafamadriz/friendly-snippets', -- optional: provides snippets for the snippet source TODO replace with luasnip
+        "L3MON4D3/LuaSnip",
     },
     version = '1.*',
     opts = {
+        snippets = {
+            preset = "luasnip",
+        },
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
         },

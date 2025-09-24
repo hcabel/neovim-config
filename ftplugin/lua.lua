@@ -1,4 +1,3 @@
-
 -- Default indent (4 space)
 
 -- LSP
