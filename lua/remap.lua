@@ -1,3 +1,5 @@
+local vim = vim
+
 vim.keymap.set("n", "<leader>ff", vim.cmd.Ex)
 
 -- Move line up and down
@@ -21,10 +23,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- add empty line without existing normal mode
-vim.keymap.set("n", "<leader>O", function ()
-	vim.api.nvim_call_function("append", {vim.fn.line(".") - 1, ""})
+vim.keymap.set("n", "<leader>O", function()
+    vim.api.nvim_call_function("append", { vim.fn.line(".") - 1, "" })
 end)
-vim.keymap.set("n", "<leader>o", function ()
-	vim.api.nvim_call_function("append", {vim.fn.line("."), ""})
+vim.keymap.set("n", "<leader>o", function()
+    vim.api.nvim_call_function("append", { vim.fn.line("."), "" })
 end)
-
