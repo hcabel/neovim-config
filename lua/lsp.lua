@@ -1,5 +1,16 @@
 local vim = vim
 
+vim.diagnostic.config({
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.INFO] = ''
+        }
+    }
+})
+
 vim.lsp.config("*", {
     root_markers = { ".git/" },
     on_attach = function(client, bufnr)
@@ -30,13 +41,19 @@ vim.lsp.config("*", {
     end,
 });
 
-vim.diagnostic.config({
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = '',
-            [vim.diagnostic.severity.WARN] = "",
-            [vim.diagnostic.severity.HINT] = '',
-            [vim.diagnostic.severity.INFO] = ''
-        }
-    }
-})
+vim.lsp.config("clangd", {});
+vim.lsp.enable("clangd");
+
+vim.lsp.config("rust_analyzer", {
+    cmd = { "rust-analyzer" },
+    filetypes = { "rust" },
+    root_markers = { "Cargo.toml", "rust-project.json" }
+});
+vim.lsp.enable("rust_analyzer");
+
+vim.lsp.config("luals", {
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
+    root_markers = { ".git/", ".luarc.json/", ".luarc.jsonc/" }
+});
+vim.lsp.enable("luals");
