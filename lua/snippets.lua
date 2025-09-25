@@ -26,3 +26,27 @@ ls.add_snippets("all", {
         })
     ),
 })
+
+ls.add_snippets("lua", {
+    s("req", {
+        t 'local ', i(1), t ' = require("', rep(1), t '")', i(0)
+    }),
+    s("fn", {
+        t "function(", i(1), t ")", i(0), t { "", "end" }
+    }),
+    s("lfn", {
+        t "local ", i(1), t " = function(", i(2), t ")", i(0), t { "", "end" }
+    }),
+})
+
+ls.add_snippets("rust", {
+    s("fn", {
+        t "fn ", i(1), t "(", i(2), t ") {", i(0), t { "", "}" }
+    }),
+    s("ifok", {
+        t "if let Ok(", i(1), t ") = ", i(2), t { " {", "\t" }, i(0), t { "", "}" }
+    }),
+    s("ifnotok", {
+        t "let Ok(", i(1), t ") = ", i(2), t { " else {", "\t" }, i(0), t { "", "}" }
+    }),
+})

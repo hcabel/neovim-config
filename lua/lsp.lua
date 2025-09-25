@@ -57,3 +57,18 @@ vim.lsp.config("luals", {
     root_markers = { ".git/", ".luarc.json/", ".luarc.jsonc/" }
 });
 vim.lsp.enable("luals");
+
+vim.lsp.config("gopls", {
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_markers = { "go.mod", ".git/" },
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+        },
+    },
+});
