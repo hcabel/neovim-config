@@ -1,5 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
     keys = { -- Redo
         { mode = 'n', "<leader>ghk", "<cmd>Gitsigns preview_hunk<cr>" },
         { mode = 'n', "<leader>ghp", "<cmd>Gitsigns prev_hunk<cr>" },
