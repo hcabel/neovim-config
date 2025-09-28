@@ -1,8 +1,5 @@
 return {
     "nvim-treesitter/nvim-treesitter", -- Better syntax highlighting
-    dependencies = {
-        "nvim-treesitter/playground",  -- Allow you to see the symbols tree
-    },
     build = ':TSUpdate',
     opts =
     {
@@ -18,7 +15,7 @@ return {
             "cpp"
         },
         sync_install = false,
-        auto_install = true,     -- Require tree-sitter CLI
+        auto_install = true, -- Require tree-sitter CLI
         highlight = {
             enable = true,
             -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
