@@ -10,7 +10,25 @@ return {
         config = function() vim.cmd([[colorscheme rose-pine]]) end,
     },
 
-    "karb94/neoscroll.nvim", -- Smoother scrolling
+    {
+        'folke/snacks.nvim',
+        priority = 1001,
+        opts = {
+            scroll = {
+                enabled = true, -- Disable scrolling animations
+                animate = {
+                    duration = { step = 25, total = 100 },
+                },
+            },
+            explorer = {
+                enabled = false, -- TODO [hcabel 2025-09-28]: Give it another try, if it can hide itself
+            },
+            image = {
+                enabled = true, -- Open image in neovim
+                -- FIXME [hcabel 2025-09-28]: Not working with alacrity
+            },
+        }
+    },
 
     {
         "catgoose/nvim-colorizer.lua", -- Color color text in the IDE
@@ -22,7 +40,6 @@ return {
         "saecki/crates.nvim", -- Show crate versions
         ft = { "toml" },
     }
-
     -- {
     --     'windwp/nvim-ts-autotag', -- Auto close and rename html tags
     --     config = function()
@@ -52,4 +69,5 @@ return {
     -- > Keypress history
     -- > Remove Text from cmp suggestion
     -- > snipets higher ranking in cmp
+
 }
