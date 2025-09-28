@@ -87,6 +87,13 @@ return {
                         },
                     }
                 },
+                lualine_x = {
+                    {
+                        function() return require("noice").api.status.command.get() end,
+                        cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+                        color = function() return { fg = Snacks.util.color("Statement") } end,
+                    },
+                },
                 lualine_y = {}, -- Override default lualine_y to be empty
                 lualine_z = { "progress" }
             },
