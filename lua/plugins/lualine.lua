@@ -1,6 +1,10 @@
 return {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    dependencies = {
+        'nvim-tree/nvim-web-devicons',
+        "LazyVim/LazyVim",
+        opt = true
+    },
     events = "VeryLazy",
     opts = function()
         local LazyVim = require("lazyvim.util")

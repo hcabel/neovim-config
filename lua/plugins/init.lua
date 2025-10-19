@@ -1,23 +1,5 @@
 return {
     {
-        'rose-pine/neovim', -- Theme
-        name = 'rose-pine',
-        lazy = false,
-        priority = 1000,
-        dependencies = {
-            'mawkler/modicator.nvim', -- Current line number highlight
-        },
-    },
-    {
-        'folke/tokyonight.nvim',
-        lazy = false,
-        priority = 1000,
-        dependencies = {
-            'mawkler/modicator.nvim', -- Current line number highlight
-        },
-    },
-
-    {
         'folke/snacks.nvim',
         priority = 1001,
         opts = {

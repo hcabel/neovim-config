@@ -19,6 +19,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("set")
 
+vim.g.lazyvim_check_order = false -- FIXME [hcabel 2025-09-28]: temporary workaround
 require("lazy").setup("plugins")
 
 require("remap")
