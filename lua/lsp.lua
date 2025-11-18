@@ -72,3 +72,18 @@ vim.lsp.config("gopls", {
         },
     },
 });
+vim.lsp.enable("gopls");
+
+vim.lsp.config("ts_ls", {
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "javascript.jsx" },
+    root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git/" }
+});
+vim.lsp.enable("ts_ls");
+
+vim.lsp.config("grapql", {
+    cmd = { "graphql-lsp", "server", "-m", "stream" },
+    filetypes = { "graphql", "gql" },
+    root_markers = { ".git/", "package.json" }
+});
+vim.lsp.enable("grapql");

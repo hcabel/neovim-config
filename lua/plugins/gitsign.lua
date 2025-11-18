@@ -3,8 +3,8 @@ return {
     event = "VeryLazy",
     keys = { -- Redo
         { mode = 'n', "<leader>ghk", "<cmd>Gitsigns preview_hunk<cr>" },
-        { mode = 'n', "<leader>ghp", "<cmd>Gitsigns prev_hunk<cr>" },
-        { mode = 'n', "<leader>ghn", "<cmd>Gitsigns next_hunk<cr>" },
+        { mode = 'n', "[g",          "<cmd>Gitsigns prev_hunk<cr>" },
+        { mode = 'n', "]g",          "<cmd>Gitsigns next_hunk<cr>" },
         { mode = 'n', "<leader>ghs", "<cmd>Gitsigns stage_hunk<cr>" },
         { mode = 'n', "<leader>ghx", "<cmd>Gitsigns reset_hunk<cr>" },
     },

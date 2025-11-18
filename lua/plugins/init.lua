@@ -7,7 +7,12 @@ return {
                 enabled = true, -- Disable scrolling animations
                 animate = {
                     duration = { step = 25, total = 100 },
+                    easing = "linear",
                 },
+                animate_repeat = {
+                    duration = { step = 5, total = 50 },
+                    easing = "linear",
+                }
             },
             explorer = {
                 enabled = false, -- TODO [hcabel 2025-09-28]: Give it another try, if it can hide itself
@@ -58,5 +63,6 @@ return {
     -- > Keypress history
     -- > Remove Text from cmp suggestion
     -- > snipets higher ranking in cmp
+    -- > Go back to root in netrw
 
 }

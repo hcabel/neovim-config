@@ -25,6 +25,7 @@ vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is enter
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 20
+vim.g.scrolloff = 20
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.numberwidth = 3

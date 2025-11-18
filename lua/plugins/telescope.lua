@@ -1,6 +1,7 @@
 return {
     'nvim-telescope/telescope.nvim', -- Fuzzy finder
     dependencies = { "nvim-lua/plenary.nvim" },
+    cmd = "Telescope",
     keys = {
         { mode = 'n', "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
         { mode = 'n', "<leader>ps", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
