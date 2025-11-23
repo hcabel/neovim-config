@@ -87,3 +87,20 @@ vim.lsp.config("grapql", {
     root_markers = { ".git/", "package.json" }
 });
 vim.lsp.enable("grapql");
+
+vim.lsp.config("ccls", {
+    cmd = { "ccls" },
+    filetypes = { "c", "cpp", "objc", "objcpp" },
+    root_markers = { ".git/", "compile_commands.json" },
+    -- use 4 spaces for indentation
+    init_options = {
+        compilationDatabaseDirectory = "build",
+        index = {
+            threads = 0,
+        },
+        clang = {
+            excludeArgs = { "-frounding-math" },
+        },
+    },
+});
+vim.lsp.enable("ccls");

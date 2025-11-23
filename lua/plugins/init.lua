@@ -1,30 +1,5 @@
 return {
     {
-        'folke/snacks.nvim',
-        priority = 1001,
-        opts = {
-            scroll = {
-                enabled = true, -- Disable scrolling animations
-                animate = {
-                    duration = { step = 25, total = 100 },
-                    easing = "linear",
-                },
-                animate_repeat = {
-                    duration = { step = 5, total = 50 },
-                    easing = "linear",
-                }
-            },
-            explorer = {
-                enabled = false, -- TODO [hcabel 2025-09-28]: Give it another try, if it can hide itself
-            },
-            image = {
-                enabled = true, -- Open image in neovim
-                -- FIXME [hcabel 2025-09-28]: Not working with alacrity
-            },
-        }
-    },
-
-    {
         "catgoose/nvim-colorizer.lua", -- Color color text in the IDE
         event = "BufReadPre",
         opts = {},
@@ -58,11 +33,14 @@ return {
     -- > "NickvanDyke/opencode.nvim"
     -- > "mrcjkb/rustaceanvim"
 
+    -- BUGS
+    -- > Tab with autocompletion goes to second item instead of completing the first
+    -- > commenting a line, comment empty lines too
+
     -- IDEA
     -- > When searching i'd like the non matching lines to be faded out
     -- > Keypress history
     -- > Remove Text from cmp suggestion
     -- > snipets higher ranking in cmp
     -- > Go back to root in netrw
-
 }

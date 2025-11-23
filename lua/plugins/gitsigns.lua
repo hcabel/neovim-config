@@ -1,5 +1,13 @@
 return {
     "lewis6991/gitsigns.nvim",
+    event = "VeryLazy",
+    keys = { -- Redo
+        { mode = 'n', "<leader>gk", "<cmd>Gitsigns preview_hunk<cr>" },
+        { mode = 'n', "[g",         "<cmd>Gitsigns prev_hunk<cr>" },
+        { mode = 'n', "]g",         "<cmd>Gitsigns next_hunk<cr>" },
+        { mode = 'n', "<leader>gs", "<cmd>Gitsigns stage_hunk<cr>" },
+        { mode = 'n', "<leader>gx", "<cmd>Gitsigns reset_hunk<cr>" },
+    },
     opts = {
         signs                        = {
             add          = { text = '┃' },
