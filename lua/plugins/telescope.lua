@@ -10,13 +10,39 @@ return {
         defaults = {
             prompt_prefix = '🔍 ',
             mappings = {
-                -- Insert mode mappings
-                i = {
-                    ["<C-z>"] = function()
-                    end
+                n = {
+                    ["q"] = function(...)
+                        require("telescope.actions").close(...)
+                    end,
                 }
             },
 
+        },
+        pickers = {
+            find_files = {
+                find_command = {
+                    "rg",
+                    "--files",
+                    "--hidden",
+                    "-u",
+                    "--glob", "!.git/",
+                    "--glob", "!.vscode/",
+                    "--glob", "!node_modules/",
+                    "--glob", "!bin/",
+                },
+            },
+            live_grep = {
+                additional_args = function()
+                    return {
+                        "--hidden",
+                        "-u",
+                        "--glob", "!.git/",
+                        "--glob", "!.vscode/",
+                        "--glob", "!node_modules/",
+                        "--glob", "!bin/",
+                    }
+                end,
+            },
         },
         extensions = {
             fzf = {
