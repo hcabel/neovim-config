@@ -26,3 +26,17 @@ require("remap")
 require("automation")
 require("lsp")
 require("snippets")
+
+local function set_transparency()
+    vim.cmd([[
+        hi Normal guibg=NONE ctermbg=NONE
+        hi NormalNC guibg=NONE ctermbg=NONE
+        hi SignColumn guibg=NONE ctermbg=NONE
+        hi TabLine guibg=NONE ctermbg=NONE
+        hi TabLineFill guibg=NONE ctermbg=NONE
+        hi TabLineSel guibg=NONE ctermbg=NONE
+    ]])
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#777777' })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#777777' })
+end
+set_transparency()

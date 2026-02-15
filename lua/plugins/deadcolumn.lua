@@ -5,7 +5,7 @@ return {
         scope = 'visible',
         modes = { 'n', 'i', 'ic', 'ix', 'R', 'Rc', 'Rx', 'Rv', 'Rvc', 'Rvx' },
         blending = {
-            threshold = 0.75,
+            threshold = 1,
             colorcode = '#000000',
             hlgroup = {
                 'Normal', 'bg',
