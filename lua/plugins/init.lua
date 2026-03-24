@@ -35,7 +35,6 @@ return {
 
     -- BUGS
     -- > Tab with autocompletion goes to second item instead of completing the first
-    -- > commenting a line, comment empty lines too
 
     -- IDEA
     -- > When searching i'd like the non matching lines to be faded out
