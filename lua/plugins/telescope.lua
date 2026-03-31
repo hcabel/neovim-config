@@ -30,6 +30,8 @@ return {
                     "--glob", "!.github/",
                     "--glob", "!.vscode/",
                     "--glob", "!node_modules/",
+                    "--glob", "!dist/",
+                    "--glob", "!.nx/",
                     "--glob", "!target/",
                     "--glob", "!bin/",
                 },
@@ -44,6 +46,8 @@ return {
                         "--glob", "!.github/",
                         "--glob", "!.vscode/",
                         "--glob", "!node_modules/",
+                        "--glob", "!dist/",
+                        "--glob", "!.nx/",
                         "--glob", "!target/",
                         "--glob", "!bin/",
                     }
