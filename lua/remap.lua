@@ -4,9 +4,13 @@ vim.keymap.set("n", "<leader>ff", vim.cmd.Ex)
 
 -- Move line up and down
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==")
+vim.keymap.set("v", "<S-Up>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==")
 
 vim.keymap.set("n", "J", "mzJ`z");
 
