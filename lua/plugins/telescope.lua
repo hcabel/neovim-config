@@ -5,6 +5,39 @@ return {
     keys = {
         { mode = 'n', "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Find files" },
         { mode = 'n', "<leader>ps", "<cmd>Telescope live_grep<cr>",  desc = "Live grep" },
+        {
+          "<leader>fe",
+          function()
+            local pickers = require("telescope.pickers")
+            local finders = require("telescope.finders")
+            local conf = require("telescope.config").values
+            local actions = require("telescope.actions")
+            local action_state = require("telescope.actions.state")
+
+            pickers.new({}, {
+              prompt_title = "Env files in bin/",
+              finder = finders.new_oneshot_job({
+                "fd",
+                "--type", "f",
+                "--hidden",
+                "--no-ignore",
+                "--glob", "*.env",
+                "bin/",
+              }),
+              previewer = conf.file_previewer({}),
+              sorter = conf.generic_sorter({}),
+              attach_mappings = function(prompt_bufnr)
+                actions.select_default:replace(function()
+                  actions.close(prompt_bufnr)
+                  local selection = action_state.get_selected_entry()
+                  vim.cmd("edit " .. selection[1])
+                end)
+                return true
+              end,
+            }):find()
+          end,
+          desc = "Find env files in bin/",
+        },
     },
     opts = {
         defaults = {
