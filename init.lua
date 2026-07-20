@@ -36,7 +36,9 @@ local function set_transparency()
         hi TabLineFill guibg=NONE ctermbg=NONE
         hi TabLineSel guibg=NONE ctermbg=NONE
     ]])
-    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg='#777777' })
-    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg='#777777' })
+    vim.api.nvim_set_hl(0, 'LineNrAbove', { fg = '#777777' })
+    vim.api.nvim_set_hl(0, 'LineNrBelow', { fg = '#777777' })
+    vim.api.nvim_set_hl(0, 'LineNr',      { fg = '#777777' })
+    vim.api.nvim_set_hl(0, 'TreesitterContextLineNumber', { fg = '#777777' })
 end
 set_transparency()
