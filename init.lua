@@ -20,7 +20,12 @@ vim.opt.rtp:prepend(lazypath)
 require("set")
 
 vim.g.lazyvim_check_order = false -- FIXME [hcabel 2025-09-28]: temporary workaround
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = "plugins",
+    -- no installed plugin needs luarocks; skip lazy's hererocks bootstrap
+    -- (python2/lua5.1 toolchain) that :checkhealth otherwise flags red.
+    rocks = { enabled = false },
+})
 
 require("remap")
 require("automation")

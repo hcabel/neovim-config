@@ -81,13 +81,6 @@ vim.lsp.config("ts_ls", {
 });
 vim.lsp.enable("ts_ls");
 
-vim.lsp.config("grapql", {
-    cmd = { "graphql-lsp", "server", "-m", "stream" },
-    filetypes = { "graphql", "gql" },
-    root_markers = { ".git/", "package.json" }
-});
-vim.lsp.enable("grapql");
-
 vim.lsp.config("ccls", {
     cmd = { "ccls" },
     filetypes = { "c", "cpp", "objc", "objcpp" },
@@ -104,3 +97,14 @@ vim.lsp.config("ccls", {
     },
 });
 vim.lsp.enable("ccls");
+
+vim.lsp.config('nixd', {
+    filetypes = { 'nix' },
+    cmd = { 'nixd' },
+    settings = {
+        formatting = {
+            command = { 'nixfmt' },
+        },
+    },
+})
+vim.lsp.enable('nixd')
